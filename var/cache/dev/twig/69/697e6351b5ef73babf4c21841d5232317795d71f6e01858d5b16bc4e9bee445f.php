@@ -115,22 +115,34 @@ class __TwigTemplate_e6b6d4b7073188a57391836b68753b5bb68e1d99e0a050384201ac8f199
                             <a class=\"nav-link\" href=\"menu.html\">Menu</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"team.html\">Team</a>
+                            <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
                         </li>
 
                         <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link\" href=\"reservation.html\">Reservation</a>
+                            <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
                         </li>
                     </div>
                     <li class=\"nav-item\">
                         <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
-                            <span class=\"lnr lnr-magnifier\"></span>
+                            <span class=\" lnr lnr-user\"></span>
                         </a>
+                    </li>
+                    <li class=\"text-center lnr lnr-user text-red text-10\"
+                        style=\"line-height: 35px; position: relative; top: -3px;\">5
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div id=\"accordion\"  class=\" navbar-expand-lg sticky-top bg-white\">
+        <div class=\"card\">
+            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
+                <div class=\"card-body\">
+                    <b>TESTTTTTT</b><input>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
@@ -768,10 +780,19 @@ class __TwigTemplate_e6b6d4b7073188a57391836b68753b5bb68e1d99e0a050384201ac8f199
         </div>
     </footer>
 </div>
+<script>
+    \$(function () {
+        \$('[data-toggle=tooltip]').tooltip({
+            animated: 'fade',
+            html: true
+        });
+    })
+
+</script>
 </div>
 <script>
     ";
-        // line 722
+        // line 743
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
 </script>
@@ -799,7 +820,7 @@ class __TwigTemplate_e6b6d4b7073188a57391836b68753b5bb68e1d99e0a050384201ac8f199
 
     public function getDebugInfo()
     {
-        return array (  775 => 722,  67 => 17,  62 => 15,  57 => 13,  43 => 1,);
+        return array (  796 => 743,  67 => 17,  62 => 15,  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -870,22 +891,34 @@ class __TwigTemplate_e6b6d4b7073188a57391836b68753b5bb68e1d99e0a050384201ac8f199
                             <a class=\"nav-link\" href=\"menu.html\">Menu</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"team.html\">Team</a>
+                            <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
                         </li>
 
                         <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link\" href=\"reservation.html\">Reservation</a>
+                            <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
                         </li>
                     </div>
                     <li class=\"nav-item\">
                         <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
-                            <span class=\"lnr lnr-magnifier\"></span>
+                            <span class=\" lnr lnr-user\"></span>
                         </a>
+                    </li>
+                    <li class=\"text-center lnr lnr-user text-red text-10\"
+                        style=\"line-height: 35px; position: relative; top: -3px;\">5
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div id=\"accordion\"  class=\" navbar-expand-lg sticky-top bg-white\">
+        <div class=\"card\">
+            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
+                <div class=\"card-body\">
+                    <b>TESTTTTTT</b><input>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
@@ -1523,6 +1556,15 @@ class __TwigTemplate_e6b6d4b7073188a57391836b68753b5bb68e1d99e0a050384201ac8f199
         </div>
     </footer>
 </div>
+<script>
+    \$(function () {
+        \$('[data-toggle=tooltip]').tooltip({
+            animated: 'fade',
+            html: true
+        });
+    })
+
+</script>
 </div>
 <script>
     {{ encore_entry_script_tags('app') }}
