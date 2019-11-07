@@ -11,7 +11,7 @@ security:
                 class: App\Entity\User
                 property: email
     firewalls:
-        api:
+        admin:
             pattern: ^/admin/
             guard:
                 authenticators:

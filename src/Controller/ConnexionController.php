@@ -16,4 +16,14 @@ class ConnexionController extends AbstractController
             'controller_name' => 'ConnexionController',
         ]);
     }
+
+    /**
+     * @Route("/connfacebook", name="connfacebook")
+     */
+    public function connfacebook()
+    {
+        return $this->render('connexion/index.html.twig', [
+            'controller_name' => 'ConnexionController',
+        ]);
+    }
 }
