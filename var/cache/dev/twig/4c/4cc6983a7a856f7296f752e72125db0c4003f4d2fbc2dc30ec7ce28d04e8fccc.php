@@ -24,10 +24,15 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'contenu' => [$this, 'block_contenu'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,98 +44,36 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
 
-        // line 1
-        echo "<html lang=\"fr\">
+        $this->parent = $this->loadTemplate("base.html.twig", "home/index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
-<head>
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
-    <meta charset=\"utf-8\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <title>Restaurant Bigchos</title>
-    <meta name=\"description\" content=\"Resto\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
-    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
-    ";
-        // line 13
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
-        echo "
-    <!-- Fonts -->
-    <link rel=\"stylesheet\" href=\"";
-        // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/icon-font.min.css"), "html", null, true);
-        echo "\">
-    <!-- CSS -->
-    <link rel=\"stylesheet\" href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.min.css"), "html", null, true);
-        echo "\">
+    }
 
-</head>
-<body data-spy=\"scroll\" data-target=\"#navbar\" class=\"static-layout\">
-<div id=\"canvas-overlay\"></div>
-<div class=\"boxed-page\">
-    <nav id=\"navbar-header\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
-        <div class=\"container\">
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"
-                    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"lnr lnr-menu\"></span>
-            </button>
+    // line 3
+    public function block_contenu($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
-            <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav d-flex justify-content-between\">
-                    <li class=\"nav-item only-desktop\">
-                        <a class=\"nav-link\" id=\"side-nav-open\" href=\"#\">
-                            <span class=\"lnr lnr-menu\"></span>
-                        </a>
-                    </li>
-                    <div class=\"d-flex flex-lg-row flex-column\">
-                        <li class=\"nav-item active\">
-                            <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\">(current)</span></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"about.html\">About</a>
-                        </li>
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                               data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                Special Dishes
-                            </a>
-                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                <a class=\"dropdown-item\" href=\"special-dishes.html\">Beef Steak Sauce</a>
-                                <a class=\"dropdown-item\" href=\"special-dishes.html\">Salmon Zucchini</a>
-                            </div>
-                        </li>
-                    </div>
-                </ul>
-
-                <a class=\"navbar-brand navbar-brand-center d-flex align-items-center only-desktop\" href=\"#\">
-                    <img src=\"img/logo2.png\" alt=\"\">
-                </a>
-                <ul class=\"navbar-nav d-flex justify-content-between\">
-                    <div class=\"d-flex flex-lg-row flex-column\">
-                        <li class=\"nav-item active\">
-                            <a class=\"nav-link lnr lnr-home\" href=\"menu.html\">Menu</a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"team.html\">Team</a>
-                        </li>
-
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link lnr lnr-user\" href=\"#connexion\"> Se connecter</a>
-                        </li>
-                    </div>
-                    <li class=\"nav-item\">
-                        <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
-                            <span class=\"lnr lnr-magnifier\"></span>
-                        </a>
-                    </li>
-                </ul>
+        // line 4
+        echo "    <div id=\"accordion\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
+        <div class=\"card\">
+            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
+                <div class=\"card-body\">
+                    <b>TESTTTTTT</b><input>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
     <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
@@ -226,11 +169,18 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                             </h2>
                         </div>
                         <div class=\"pl-lg-5 ml-md-5\">
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from
-                                it would have been rewritten a thousand times and everything that was left from its
-                                origin would be the word \"and\" and the Little Blind Text should turn around and return
-                                to its own, safe country. A small river named Duden flows by their place and supplies it
-                                with the necessary regelialia. It is a paradisematic country, in which roasted parts of
+                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it
+                                came
+                                from
+                                it would have been rewritten a thousand times and everything that was left from
+                                its
+                                origin would be the word \"and\" and the Little Blind Text should turn around and
+                                return
+                                to its own, safe country. A small river named Duden flows by their place and
+                                supplies it
+                                with the necessary regelialia. It is a paradisematic country, in which roasted
+                                parts
+                                of
                                 sentences fly into your mouth.</p>
                             <h3 class=\"mt-5\">Special Recipe</h3>
                             <div class=\"row\">
@@ -276,11 +226,13 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <h2 class=\"special-number\">01.</h2>
                         <div class=\"dishes-text\">
                             <h3><span>Beef</span><br> Steak Sauce</h3>
-                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ea
-                                vero alias perferendis quas animi doloribus voluptates. Atque explicabo ea nesciunt
+                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Cupiditate, ea
+                                vero alias perferendis quas animi doloribus voluptates. Atque explicabo ea
+                                nesciunt
                                 provident libero qui eum, corporis esse quos excepturi soluta?</p>
                             <h3 class=\"special-dishes-price\">\$15.00</h3>
-                            <a href=\"#\" class=\"btn-primary mt-3\">book a table</a>
+                            <a onclick=\"commander()\" class=\"btn-primary mt-3\">Commander</a>
                         </div>
                     </div>
                     <div class=\"col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0\">
@@ -295,8 +247,10 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <h2 class=\"special-number\">02.</h2>
                         <div class=\"dishes-text\">
                             <h3><span>Salmon</span><br> Zucchini</h3>
-                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                                accusamus culpa quam amet ipsam odit ea doloremque accusantium quo, itaque possimus
+                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Blanditiis,
+                                accusamus culpa quam amet ipsam odit ea doloremque accusantium quo, itaque
+                                possimus
                                 eius. In a quis quibusdam omnis atque vero dolores!</p>
                             <h3 class=\"special-dishes-price\">\$12.00</h3>
                             <a href=\"#\" class=\"btn-primary mt-3\">book a table <span><i
@@ -638,17 +592,21 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <form method=\"post\" name=\"contact-us\" action=\"\">
                             <div class=\"row\">
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\">
+                                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\"
+                                           placeholder=\"Name\">
                                 </div>
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\">
+                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\"
+                                           placeholder=\"Email\">
                                 </div>
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"number\" class=\"form-control\" id=\"phoneNumber\" name=\"phoneNumber\"
+                                    <input type=\"number\" class=\"form-control\" id=\"phoneNumber\"
+                                           name=\"phoneNumber\"
                                            placeholder=\"Phone\">
                                 </div>
                                 <div class=\"col-md-6 form-group\">
-                                    <div class=\"input-group date\" id=\"datetimepicker4\" data-target-input=\"nearest\">
+                                    <div class=\"input-group date\" id=\"datetimepicker4\"
+                                         data-target-input=\"nearest\">
                                         <input type=\"text\" class=\"form-control datetimepicker-input\"
                                                data-target=\"#datetimepicker4\" placeholder=\"Date\"/>
                                         <div class=\"input-group-append\" data-target=\"#datetimepicker4\"
@@ -661,7 +619,8 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                 </div>
 
                                 <div class=\"col-md-6 form-group\">
-                                    <div class=\"input-group date\" id=\"datetimepicker3\" data-target-input=\"nearest\">
+                                    <div class=\"input-group date\" id=\"datetimepicker3\"
+                                         data-target-input=\"nearest\">
                                         <input type=\"text\" class=\"form-control datetimepicker-input\"
                                                data-target=\"#datetimepicker3\" placeholder=\"Time\"/>
                                         <div class=\"input-group-append\" data-target=\"#datetimepicker3\"
@@ -689,7 +648,9 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                               placeholder=\"Your Message ...\"></textarea>
                                 </div>
                                 <div class=\"col-md-12 text-center\">
-                                    <button class=\"btn btn-primary btn-shadow btn-lg\" type=\"submit\" name=\"submit\">Send
+                                    <button class=\"btn btn-primary btn-shadow btn-lg\" type=\"submit\"
+                                            name=\"submit\">
+                                        Send
                                         Message
                                     </button>
                                 </div>
@@ -702,97 +663,12 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         </div>
     </section>
     <!-- End of Reservation Section -->
-    <footer class=\"mastfoot pb-5 bg-white section-padding pb-0\">
-        <div class=\"inner container\">
-            <div class=\"row\">
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget pr-lg-5 pr-0\">
-                        <img src=\"img/logo.png\" class=\"img-fluid footer-logo mb-3\" alt=\"\">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis
-                            explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni,
-                            et voluptatum dolorem.</p>
-                        <nav class=\"nav nav-mastfoot justify-content-start\">
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-facebook-f\"></i>
-                            </a>
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-twitter\"></i>
-                            </a>
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-instagram\"></i>
-                            </a>
-                        </nav>
-                    </div>
-
-                </div>
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget px-lg-5 px-0\">
-                        <h4>Open Hours</h4>
-                        <ul class=\"list-unstyled open-hours\">
-                            <li class=\"d-flex justify-content-between\"><span>Monday</span><span>9:00 - 24:00</span></li>
-                            <li class=\"d-flex justify-content-between\"><span>Tuesday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Wednesday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Thursday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Friday</span><span>9:00 - 02:00</span></li>
-                            <li class=\"d-flex justify-content-between\"><span>Saturday</span><span>9:00 - 02:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Sunday</span><span> Closed</span></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget pl-lg-5 pl-0\">
-                        <h4>Newsletter</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <form id=\"newsletter\">
-                            <div class=\"form-group\">
-                                <input type=\"email\" class=\"form-control\" id=\"emailNewsletter\"
-                                       aria-describedby=\"emailNewsletter\" placeholder=\"Enter email\">
-                            </div>
-                            <button type=\"submit\" class=\"btn btn-primary w-100\">Submit</button>
-                        </form>
-                    </div>
-
-                </div>
-                <div class=\"col-md-12 d-flex align-items-center\">
-                    <p class=\"mx-auto text-center mb-0\">Copyright 2019. All Right Reserved. Design by <a
-                                href=\"https://gettemplates.co\" target=\"_blank\">GetTemplates</a></p>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-</div>
-<script>
-    \$(function () {
-        \$('[data-toggle=tooltip]').tooltip({
-            animated: 'fade',
-            html: true
-        });
-    })
-
-</script>
-</div>
-<script>
-    ";
-        // line 731
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
-        echo "
-</script>
-
-</body>
-</html>
 ";
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -808,93 +684,23 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
 
     public function getDebugInfo()
     {
-        return array (  784 => 731,  67 => 17,  62 => 15,  57 => 13,  43 => 1,);
+        return array (  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<html lang=\"fr\">
+        return new Source("{% extends 'base.html.twig' %}
 
-<head>
-
-    <meta charset=\"utf-8\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <title>Restaurant Bigchos</title>
-    <meta name=\"description\" content=\"Resto\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
-    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
-    {{ encore_entry_link_tags('app') }}
-    <!-- Fonts -->
-    <link rel=\"stylesheet\" href=\"{{ asset('css/icon-font.min.css') }}\">
-    <!-- CSS -->
-    <link rel=\"stylesheet\" href=\"{{ asset('css/style.min.css') }}\">
-
-</head>
-<body data-spy=\"scroll\" data-target=\"#navbar\" class=\"static-layout\">
-<div id=\"canvas-overlay\"></div>
-<div class=\"boxed-page\">
-    <nav id=\"navbar-header\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
-        <div class=\"container\">
-            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"
-                    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"lnr lnr-menu\"></span>
-            </button>
-
-            <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav d-flex justify-content-between\">
-                    <li class=\"nav-item only-desktop\">
-                        <a class=\"nav-link\" id=\"side-nav-open\" href=\"#\">
-                            <span class=\"lnr lnr-menu\"></span>
-                        </a>
-                    </li>
-                    <div class=\"d-flex flex-lg-row flex-column\">
-                        <li class=\"nav-item active\">
-                            <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\">(current)</span></a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"about.html\">About</a>
-                        </li>
-
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
-                               data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                Special Dishes
-                            </a>
-                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                <a class=\"dropdown-item\" href=\"special-dishes.html\">Beef Steak Sauce</a>
-                                <a class=\"dropdown-item\" href=\"special-dishes.html\">Salmon Zucchini</a>
-                            </div>
-                        </li>
-                    </div>
-                </ul>
-
-                <a class=\"navbar-brand navbar-brand-center d-flex align-items-center only-desktop\" href=\"#\">
-                    <img src=\"img/logo2.png\" alt=\"\">
-                </a>
-                <ul class=\"navbar-nav d-flex justify-content-between\">
-                    <div class=\"d-flex flex-lg-row flex-column\">
-                        <li class=\"nav-item active\">
-                            <a class=\"nav-link lnr lnr-home\" href=\"menu.html\">Menu</a>
-                        </li>
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"team.html\">Team</a>
-                        </li>
-
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link lnr lnr-user\" href=\"#connexion\"> Se connecter</a>
-                        </li>
-                    </div>
-                    <li class=\"nav-item\">
-                        <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
-                            <span class=\"lnr lnr-magnifier\"></span>
-                        </a>
-                    </li>
-                </ul>
+{% block contenu %}
+    <div id=\"accordion\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
+        <div class=\"card\">
+            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
+                <div class=\"card-body\">
+                    <b>TESTTTTTT</b><input>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
     <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
@@ -990,11 +796,18 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                             </h2>
                         </div>
                         <div class=\"pl-lg-5 ml-md-5\">
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from
-                                it would have been rewritten a thousand times and everything that was left from its
-                                origin would be the word \"and\" and the Little Blind Text should turn around and return
-                                to its own, safe country. A small river named Duden flows by their place and supplies it
-                                with the necessary regelialia. It is a paradisematic country, in which roasted parts of
+                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it
+                                came
+                                from
+                                it would have been rewritten a thousand times and everything that was left from
+                                its
+                                origin would be the word \"and\" and the Little Blind Text should turn around and
+                                return
+                                to its own, safe country. A small river named Duden flows by their place and
+                                supplies it
+                                with the necessary regelialia. It is a paradisematic country, in which roasted
+                                parts
+                                of
                                 sentences fly into your mouth.</p>
                             <h3 class=\"mt-5\">Special Recipe</h3>
                             <div class=\"row\">
@@ -1040,11 +853,13 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <h2 class=\"special-number\">01.</h2>
                         <div class=\"dishes-text\">
                             <h3><span>Beef</span><br> Steak Sauce</h3>
-                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ea
-                                vero alias perferendis quas animi doloribus voluptates. Atque explicabo ea nesciunt
+                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Cupiditate, ea
+                                vero alias perferendis quas animi doloribus voluptates. Atque explicabo ea
+                                nesciunt
                                 provident libero qui eum, corporis esse quos excepturi soluta?</p>
                             <h3 class=\"special-dishes-price\">\$15.00</h3>
-                            <a href=\"#\" class=\"btn-primary mt-3\">book a table</a>
+                            <a onclick=\"commander()\" class=\"btn-primary mt-3\">Commander</a>
                         </div>
                     </div>
                     <div class=\"col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0\">
@@ -1059,8 +874,10 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <h2 class=\"special-number\">02.</h2>
                         <div class=\"dishes-text\">
                             <h3><span>Salmon</span><br> Zucchini</h3>
-                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                                accusamus culpa quam amet ipsam odit ea doloremque accusantium quo, itaque possimus
+                            <p class=\"pt-3\">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Blanditiis,
+                                accusamus culpa quam amet ipsam odit ea doloremque accusantium quo, itaque
+                                possimus
                                 eius. In a quis quibusdam omnis atque vero dolores!</p>
                             <h3 class=\"special-dishes-price\">\$12.00</h3>
                             <a href=\"#\" class=\"btn-primary mt-3\">book a table <span><i
@@ -1402,17 +1219,21 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                         <form method=\"post\" name=\"contact-us\" action=\"\">
                             <div class=\"row\">
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\">
+                                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\"
+                                           placeholder=\"Name\">
                                 </div>
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\">
+                                    <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\"
+                                           placeholder=\"Email\">
                                 </div>
                                 <div class=\"col-md-12 form-group\">
-                                    <input type=\"number\" class=\"form-control\" id=\"phoneNumber\" name=\"phoneNumber\"
+                                    <input type=\"number\" class=\"form-control\" id=\"phoneNumber\"
+                                           name=\"phoneNumber\"
                                            placeholder=\"Phone\">
                                 </div>
                                 <div class=\"col-md-6 form-group\">
-                                    <div class=\"input-group date\" id=\"datetimepicker4\" data-target-input=\"nearest\">
+                                    <div class=\"input-group date\" id=\"datetimepicker4\"
+                                         data-target-input=\"nearest\">
                                         <input type=\"text\" class=\"form-control datetimepicker-input\"
                                                data-target=\"#datetimepicker4\" placeholder=\"Date\"/>
                                         <div class=\"input-group-append\" data-target=\"#datetimepicker4\"
@@ -1425,7 +1246,8 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                 </div>
 
                                 <div class=\"col-md-6 form-group\">
-                                    <div class=\"input-group date\" id=\"datetimepicker3\" data-target-input=\"nearest\">
+                                    <div class=\"input-group date\" id=\"datetimepicker3\"
+                                         data-target-input=\"nearest\">
                                         <input type=\"text\" class=\"form-control datetimepicker-input\"
                                                data-target=\"#datetimepicker3\" placeholder=\"Time\"/>
                                         <div class=\"input-group-append\" data-target=\"#datetimepicker3\"
@@ -1453,7 +1275,9 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                               placeholder=\"Your Message ...\"></textarea>
                                 </div>
                                 <div class=\"col-md-12 text-center\">
-                                    <button class=\"btn btn-primary btn-shadow btn-lg\" type=\"submit\" name=\"submit\">Send
+                                    <button class=\"btn btn-primary btn-shadow btn-lg\" type=\"submit\"
+                                            name=\"submit\">
+                                        Send
                                         Message
                                     </button>
                                 </div>
@@ -1466,88 +1290,6 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         </div>
     </section>
     <!-- End of Reservation Section -->
-    <footer class=\"mastfoot pb-5 bg-white section-padding pb-0\">
-        <div class=\"inner container\">
-            <div class=\"row\">
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget pr-lg-5 pr-0\">
-                        <img src=\"img/logo.png\" class=\"img-fluid footer-logo mb-3\" alt=\"\">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis
-                            explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni,
-                            et voluptatum dolorem.</p>
-                        <nav class=\"nav nav-mastfoot justify-content-start\">
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-facebook-f\"></i>
-                            </a>
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-twitter\"></i>
-                            </a>
-                            <a class=\"nav-link\" href=\"#\">
-                                <i class=\"fab fa-instagram\"></i>
-                            </a>
-                        </nav>
-                    </div>
-
-                </div>
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget px-lg-5 px-0\">
-                        <h4>Open Hours</h4>
-                        <ul class=\"list-unstyled open-hours\">
-                            <li class=\"d-flex justify-content-between\"><span>Monday</span><span>9:00 - 24:00</span></li>
-                            <li class=\"d-flex justify-content-between\"><span>Tuesday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Wednesday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Thursday</span><span>9:00 - 24:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Friday</span><span>9:00 - 02:00</span></li>
-                            <li class=\"d-flex justify-content-between\"><span>Saturday</span><span>9:00 - 02:00</span>
-                            </li>
-                            <li class=\"d-flex justify-content-between\"><span>Sunday</span><span> Closed</span></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class=\"col-lg-4\">
-                    <div class=\"footer-widget pl-lg-5 pl-0\">
-                        <h4>Newsletter</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <form id=\"newsletter\">
-                            <div class=\"form-group\">
-                                <input type=\"email\" class=\"form-control\" id=\"emailNewsletter\"
-                                       aria-describedby=\"emailNewsletter\" placeholder=\"Enter email\">
-                            </div>
-                            <button type=\"submit\" class=\"btn btn-primary w-100\">Submit</button>
-                        </form>
-                    </div>
-
-                </div>
-                <div class=\"col-md-12 d-flex align-items-center\">
-                    <p class=\"mx-auto text-center mb-0\">Copyright 2019. All Right Reserved. Design by <a
-                                href=\"https://gettemplates.co\" target=\"_blank\">GetTemplates</a></p>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-</div>
-<script>
-    \$(function () {
-        \$('[data-toggle=tooltip]').tooltip({
-            animated: 'fade',
-            html: true
-        });
-    })
-
-</script>
-</div>
-<script>
-    {{ encore_entry_script_tags('app') }}
-</script>
-
-</body>
-</html>
-", "home/index.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\home\\index.html.twig");
+{% endblock contenu %}", "home/index.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\home\\index.html.twig");
     }
 }

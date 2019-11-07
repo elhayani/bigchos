@@ -27,10 +27,11 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
         $this->parent = false;
 
         $this->blocks = [
-            'stylesheets' => [$this, 'block_stylesheets'],
-            'menu' => [$this, 'block_menu'],
+            'head' => [$this, 'block_head'],
             'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
+            'menu' => [$this, 'block_menu'],
+            'contenu' => [$this, 'block_contenu'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -44,28 +45,15 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
-        echo "<!DOCTYPE html>
-<html>
-<head>
-    <title>RESTO</title>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    ";
-        // line 7
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
-        echo "</head>
-<body>
+        echo "<html lang=\"fr\">
 ";
-        // line 12
-        $this->displayBlock('menu', $context, $blocks);
-        // line 40
+        // line 2
+        $this->displayBlock('head', $context, $blocks);
+        // line 20
         $this->displayBlock('body', $context, $blocks);
-        // line 78
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 81
-        echo "</body>
-</html>";
+        // line 209
+        echo "</html>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -74,69 +62,42 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
 
     }
 
-    // line 7
-    public function block_stylesheets($context, array $blocks = [])
+    // line 2
+    public function block_head($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
-        // line 8
-        echo "        ";
+        // line 3
+        echo "    <head>
+
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <title>Restaurant Bigchos</title>
+        <meta name=\"description\" content=\"Resto\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+        ";
+        // line 13
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
-    ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 12
-    public function block_menu($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
-
-        // line 13
-        echo "
-    <nav class=\"navbar navbar-expand-sm bg-dark navbar-dark justify-content-center\">
-        <!-- Links -->
-        <ul class=\"navbar-nav\">
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 1</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 2</a>
-            </li>
-            <li class=\"nav-item\">
-            <a class=\"navbar-brand\" href=\"#\">
-                <img src=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo2.png"), "html", null, true);
-        echo "\" alt=\"logo\" style=\"width:40px;\">
-            </a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 2</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 3</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class=\"container-fluid\">
-    </div>
+        <!-- Fonts -->
+        <link rel=\"stylesheet\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/icon-font.min.css"), "html", null, true);
+        echo "\">
+        <!-- CSS -->
+        <link rel=\"stylesheet\" href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.min.css"), "html", null, true);
+        echo "\">
+    </head>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -146,7 +107,7 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
 
     }
 
-    // line 40
+    // line 20
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,52 +117,66 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 41
-        echo "    <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">
-        <ul class=\"carousel-indicators\">
-            <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>
-            <li data-target=\"#demo\" data-slide-to=\"1\"></li>
-            <li data-target=\"#demo\" data-slide-to=\"2\"></li>
-        </ul>
-        <div class=\"carousel-inner\">
-            <div class=\"carousel-item active\">
-                <img src=\"";
-        // line 49
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/la.jpg"), "html", null, true);
-        echo "\"\" alt=\"Los Angeles\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
-                </div>
-            </div>
-            <div class=\"carousel-item\">
-                <img src=\"";
-        // line 56
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/chicago.jpg"), "html", null, true);
-        echo "\" alt=\"Chicago\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago!</p>
-                </div>
-            </div>
-            <div class=\"carousel-item\">
-                <img src=\"";
-        // line 63
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/ny.jpg"), "html", null, true);
-        echo "\" alt=\"New York\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>New York</h3>
-                    <p>We love the Big Apple!</p>
-                </div>
-            </div>
-        </div>
-        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">
-            <span class=\"carousel-control-prev-icon\"></span>
-        </a>
-        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">
-            <span class=\"carousel-control-next-icon\"></span>
-        </a>
+        // line 21
+        echo "    <body data-spy=\"scroll\" data-target=\"#navbar\" class=\"static-layout\">
+    <div id=\"canvas-overlay\"></div>
+    <div class=\"boxed-page\">
+        ";
+        // line 24
+        $this->displayBlock('menu', $context, $blocks);
+        // line 90
+        echo "        ";
+        $this->displayBlock('contenu', $context, $blocks);
+        // line 92
+        echo "        ";
+        $this->displayBlock('footer', $context, $blocks);
+        // line 171
+        echo "    </div>
+    <script>
+        \$(function () {
+            \$('[data-toggle=tooltip]').tooltip({
+                animated: 'fade',
+                html: true
+            });
+        });
+
+        function commander() {
+            var request = \$.ajax({
+                url: \"";
+        // line 182
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("command");
+        echo "\",
+                method: \"POST\",
+                data: {id: 44},
+                dataType: \"html\"
+            });
+
+            request.done(function (msg) {
+                switch (msg) {
+                    case 'noconnect' :
+                        \$(location).attr('href', \"";
+        // line 191
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+        echo "\");
+                        break;
+                }
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert(\"Request failed: \" + textStatus);
+
+            })
+        }
+
+    </script>
     </div>
+    <script>
+        ";
+        // line 205
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
+        echo "
+    </script>
+    </body>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -211,21 +186,199 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
 
     }
 
-    // line 78
-    public function block_javascripts($context, array $blocks = [])
+    // line 24
+    public function block_menu($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
 
-        // line 79
-        echo "    ";
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
-        echo "
-";
+        // line 25
+        echo "            <nav id=\"navbar-header\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
+                <div class=\"container\">
+                    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\"
+                            data-target=\"#navbarSupportedContent\"
+                            aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                        <span class=\"lnr lnr-menu\"></span>
+                    </button>
+
+                    <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
+                        <ul class=\"navbar-nav d-flex justify-content-between\">
+                            <li class=\"nav-item only-desktop\">
+                                <a class=\"nav-link\" id=\"side-nav-open\" href=\"#\">
+                                    <span class=\"lnr lnr-menu\"></span>
+                                </a>
+                            </li>
+                            <div class=\"d-flex flex-lg-row flex-column\">
+                                <li class=\"nav-item active\">
+                                    <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\">(current)</span></a>
+                                </li>
+                                <li class=\"nav-item\">
+                                    <a class=\"nav-link\" href=\"about.html\">About</a>
+                                </li>
+
+                                <li class=\"nav-item dropdown\">
+                                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
+                                       data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                                        Special Dishes
+                                    </a>
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                        <a class=\"dropdown-item\" href=\"special-dishes.html\">Beef Steak Sauce</a>
+                                        <a class=\"dropdown-item\" href=\"special-dishes.html\">Salmon Zucchini</a>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+
+                        <a class=\"navbar-brand navbar-brand-center d-flex align-items-center only-desktop\" href=\"#\">
+                            <img src=\"img/logo2.png\" alt=\"\">
+                        </a>
+                        <ul class=\"navbar-nav d-flex justify-content-between\">
+                            <div class=\"d-flex flex-lg-row flex-column\">
+                                <li class=\"nav-item active\">
+                                    <a class=\"nav-link\" href=\"menu.html\">Menu</a>
+                                </li>
+                                <li class=\"nav-item\">
+                                    <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
+                                </li>
+
+                                <li class=\"nav-item dropdown\">
+                                    <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
+                                </li>
+                            </div>
+                            <li class=\"nav-item\">
+                                <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
+                                    <span class=\" lnr lnr-user\"></span>
+                                </a>
+                            </li>
+                            <li class=\"text-center lnr lnr-user text-red text-10\"
+                                style=\"line-height: 35px; position: relative; top: -3px;\">5
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 90
+    public function block_contenu($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
+
+        // line 91
+        echo "        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 92
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 93
+        echo "            <footer class=\"mastfoot pb-5 bg-white section-padding pb-0\">
+                <div class=\"inner container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget pr-lg-5 pr-0\">
+                                <img src=\"img/logo.png\" class=\"img-fluid footer-logo mb-3\" alt=\"\">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id
+                                    sit
+                                    omnis
+                                    explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi?
+                                    Magni,
+                                    et voluptatum dolorem.</p>
+                                <nav class=\"nav nav-mastfoot justify-content-start\">
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-facebook-f\"></i>
+                                    </a>
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-twitter\"></i>
+                                    </a>
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-instagram\"></i>
+                                    </a>
+                                </nav>
+                            </div>
+
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget px-lg-5 px-0\">
+                                <h4>Open Hours</h4>
+                                <ul class=\"list-unstyled open-hours\">
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Monday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Tuesday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Wednesday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Thursday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Friday</span><span>9:00 - 02:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Saturday</span><span>9:00 - 02:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\"><span>Sunday</span><span> Closed</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget pl-lg-5 pl-0\">
+                                <h4>Newsletter</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <form id=\"newsletter\">
+                                    <div class=\"form-group\">
+                                        <input type=\"email\" class=\"form-control\" id=\"emailNewsletter\"
+                                               aria-describedby=\"emailNewsletter\" placeholder=\"Enter email\">
+                                    </div>
+                                    <button type=\"submit\" class=\"btn btn-primary w-100\">Submit</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class=\"col-md-12 d-flex align-items-center\">
+                            <p class=\"mx-auto text-center mb-0\">Copyright 2019. All Right Reserved. Design by <a
+                                        href=\"https://gettemplates.co\" target=\"_blank\">GetTemplates</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -241,92 +394,220 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
 
     public function getDebugInfo()
     {
-        return array (  225 => 79,  215 => 78,  190 => 63,  180 => 56,  170 => 49,  160 => 41,  150 => 40,  125 => 25,  111 => 13,  101 => 12,  88 => 8,  78 => 7,  67 => 81,  65 => 78,  63 => 40,  61 => 12,  57 => 10,  55 => 7,  47 => 1,);
+        return array (  304 => 93,  294 => 92,  284 => 91,  274 => 90,  200 => 25,  190 => 24,  176 => 205,  159 => 191,  147 => 182,  134 => 171,  131 => 92,  128 => 90,  126 => 24,  121 => 21,  111 => 20,  98 => 17,  93 => 15,  88 => 13,  76 => 3,  66 => 2,  55 => 209,  53 => 20,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html>
-<head>
-    <title>RESTO</title>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    {% block stylesheets %}
+        return new Source("<html lang=\"fr\">
+{% block head %}
+    <head>
+
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <title>Restaurant Bigchos</title>
+        <meta name=\"description\" content=\"Resto\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
         {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-</head>
-<body>
-{% block menu %}
-
-    <nav class=\"navbar navbar-expand-sm bg-dark navbar-dark justify-content-center\">
-        <!-- Links -->
-        <ul class=\"navbar-nav\">
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 1</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 2</a>
-            </li>
-            <li class=\"nav-item\">
-            <a class=\"navbar-brand\" href=\"#\">
-                <img src=\"{{ asset('img/logo2.png')}}\" alt=\"logo\" style=\"width:40px;\">
-            </a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 2</a>
-            </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link 3</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class=\"container-fluid\">
-    </div>
+        <!-- Fonts -->
+        <link rel=\"stylesheet\" href=\"{{ asset('css/icon-font.min.css') }}\">
+        <!-- CSS -->
+        <link rel=\"stylesheet\" href=\"{{ asset('css/style.min.css') }}\">
+    </head>
 {% endblock %}
 {% block body %}
-    <div id=\"demo\" class=\"carousel slide\" data-ride=\"carousel\">
-        <ul class=\"carousel-indicators\">
-            <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>
-            <li data-target=\"#demo\" data-slide-to=\"1\"></li>
-            <li data-target=\"#demo\" data-slide-to=\"2\"></li>
-        </ul>
-        <div class=\"carousel-inner\">
-            <div class=\"carousel-item active\">
-                <img src=\"{{ asset('img/la.jpg')}}\"\" alt=\"Los Angeles\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
+    <body data-spy=\"scroll\" data-target=\"#navbar\" class=\"static-layout\">
+    <div id=\"canvas-overlay\"></div>
+    <div class=\"boxed-page\">
+        {% block menu %}
+            <nav id=\"navbar-header\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
+                <div class=\"container\">
+                    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\"
+                            data-target=\"#navbarSupportedContent\"
+                            aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                        <span class=\"lnr lnr-menu\"></span>
+                    </button>
+
+                    <div class=\"collapse navbar-collapse justify-content-between\" id=\"navbarSupportedContent\">
+                        <ul class=\"navbar-nav d-flex justify-content-between\">
+                            <li class=\"nav-item only-desktop\">
+                                <a class=\"nav-link\" id=\"side-nav-open\" href=\"#\">
+                                    <span class=\"lnr lnr-menu\"></span>
+                                </a>
+                            </li>
+                            <div class=\"d-flex flex-lg-row flex-column\">
+                                <li class=\"nav-item active\">
+                                    <a class=\"nav-link\" href=\"/\">Home <span class=\"sr-only\">(current)</span></a>
+                                </li>
+                                <li class=\"nav-item\">
+                                    <a class=\"nav-link\" href=\"about.html\">About</a>
+                                </li>
+
+                                <li class=\"nav-item dropdown\">
+                                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"
+                                       data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                                        Special Dishes
+                                    </a>
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                        <a class=\"dropdown-item\" href=\"special-dishes.html\">Beef Steak Sauce</a>
+                                        <a class=\"dropdown-item\" href=\"special-dishes.html\">Salmon Zucchini</a>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+
+                        <a class=\"navbar-brand navbar-brand-center d-flex align-items-center only-desktop\" href=\"#\">
+                            <img src=\"img/logo2.png\" alt=\"\">
+                        </a>
+                        <ul class=\"navbar-nav d-flex justify-content-between\">
+                            <div class=\"d-flex flex-lg-row flex-column\">
+                                <li class=\"nav-item active\">
+                                    <a class=\"nav-link\" href=\"menu.html\">Menu</a>
+                                </li>
+                                <li class=\"nav-item\">
+                                    <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
+                                </li>
+
+                                <li class=\"nav-item dropdown\">
+                                    <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
+                                </li>
+                            </div>
+                            <li class=\"nav-item\">
+                                <a id=\"side-search-open\" class=\"nav-link\" href=\"#\">
+                                    <span class=\" lnr lnr-user\"></span>
+                                </a>
+                            </li>
+                            <li class=\"text-center lnr lnr-user text-red text-10\"
+                                style=\"line-height: 35px; position: relative; top: -3px;\">5
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class=\"carousel-item\">
-                <img src=\"{{ asset('img/chicago.jpg')}}\" alt=\"Chicago\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago!</p>
+            </nav>
+        {% endblock %}
+        {% block contenu %}
+        {% endblock contenu %}
+        {% block footer %}
+            <footer class=\"mastfoot pb-5 bg-white section-padding pb-0\">
+                <div class=\"inner container\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget pr-lg-5 pr-0\">
+                                <img src=\"img/logo.png\" class=\"img-fluid footer-logo mb-3\" alt=\"\">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id
+                                    sit
+                                    omnis
+                                    explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi?
+                                    Magni,
+                                    et voluptatum dolorem.</p>
+                                <nav class=\"nav nav-mastfoot justify-content-start\">
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-facebook-f\"></i>
+                                    </a>
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-twitter\"></i>
+                                    </a>
+                                    <a class=\"nav-link\" href=\"#\">
+                                        <i class=\"fab fa-instagram\"></i>
+                                    </a>
+                                </nav>
+                            </div>
+
+                        </div>
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget px-lg-5 px-0\">
+                                <h4>Open Hours</h4>
+                                <ul class=\"list-unstyled open-hours\">
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Monday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Tuesday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Wednesday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Thursday</span><span>9:00 - 24:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Friday</span><span>9:00 - 02:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\">
+                                        <span>Saturday</span><span>9:00 - 02:00</span>
+                                    </li>
+                                    <li class=\"d-flex justify-content-between\"><span>Sunday</span><span> Closed</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class=\"col-lg-4\">
+                            <div class=\"footer-widget pl-lg-5 pl-0\">
+                                <h4>Newsletter</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <form id=\"newsletter\">
+                                    <div class=\"form-group\">
+                                        <input type=\"email\" class=\"form-control\" id=\"emailNewsletter\"
+                                               aria-describedby=\"emailNewsletter\" placeholder=\"Enter email\">
+                                    </div>
+                                    <button type=\"submit\" class=\"btn btn-primary w-100\">Submit</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class=\"col-md-12 d-flex align-items-center\">
+                            <p class=\"mx-auto text-center mb-0\">Copyright 2019. All Right Reserved. Design by <a
+                                        href=\"https://gettemplates.co\" target=\"_blank\">GetTemplates</a></p>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class=\"carousel-item\">
-                <img src=\"{{ asset('img/ny.jpg')}}\" alt=\"New York\" width=\"1100\" height=\"500\">
-                <div class=\"carousel-caption\">
-                    <h3>New York</h3>
-                    <p>We love the Big Apple!</p>
-                </div>
-            </div>
-        </div>
-        <a class=\"carousel-control-prev\" href=\"#demo\" data-slide=\"prev\">
-            <span class=\"carousel-control-prev-icon\"></span>
-        </a>
-        <a class=\"carousel-control-next\" href=\"#demo\" data-slide=\"next\">
-            <span class=\"carousel-control-next-icon\"></span>
-        </a>
+            </footer>
+        {% endblock %}
     </div>
+    <script>
+        \$(function () {
+            \$('[data-toggle=tooltip]').tooltip({
+                animated: 'fade',
+                html: true
+            });
+        });
+
+        function commander() {
+            var request = \$.ajax({
+                url: \"{{ path('command') }}\",
+                method: \"POST\",
+                data: {id: 44},
+                dataType: \"html\"
+            });
+
+            request.done(function (msg) {
+                switch (msg) {
+                    case 'noconnect' :
+                        \$(location).attr('href', \"{{ path('connexion') }}\");
+                        break;
+                }
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert(\"Request failed: \" + textStatus);
+
+            })
+        }
+
+    </script>
+    </div>
+    <script>
+        {{ encore_entry_script_tags('app') }}
+    </script>
+    </body>
 {% endblock %}
-{% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
-{% endblock %}
-</body>
-</html>", "base.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\base.html.twig");
+</html>
+", "base.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\base.html.twig");
     }
 }
