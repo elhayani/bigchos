@@ -26,6 +26,7 @@ class __TwigTemplate_fc7b0a12b7af46036a1d8fc7eb0c9ed7c0dac3e1ebb139e68a12a2ed4ab
 
         $this->blocks = [
             'contenu' => [$this, 'block_contenu'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -65,9 +66,68 @@ class __TwigTemplate_fc7b0a12b7af46036a1d8fc7eb0c9ed7c0dac3e1ebb139e68a12a2ed4ab
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 4
-        echo "
-    rrrrrr
+        echo "    <div class=\"container align-items-center \">
+        <div class=\"row\">
+
+            <div class=\"main\">
+
+                <h3>Please Log In, or <a href=\"#\">Sign Up</a></h3>
+                <div class=\"row\">
+                    <div class=\"col-xs-6 col-sm-6 col-md-6\">
+                        <a href=\"#\" class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
+                    </div>
+                    <div class=\"col-xs-6 col-sm-6 col-md-6\">
+                        <a href=\"#\" class=\"btn btn-lg btn-info btn-block\">Google</a>
+                    </div>
+                </div>
+                <div class=\"login-or\">
+                    <hr class=\"hr-or\">
+                    <span class=\"span-or\">or</span>
+                </div>
+
+                <form role=\"form\">
+                    <div class=\"form-group\">
+                        <label for=\"inputUsernameEmail\">Username or email</label>
+                        <input type=\"text\" class=\"form-control\" id=\"inputUsernameEmail\">
+                    </div>
+                    <div class=\"form-group\">
+                        <a class=\"pull-right\" href=\"#\">Forgot password?</a>
+                        <label for=\"inputPassword\">Password</label>
+                        <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
+                    </div>
+                    <div class=\"checkbox pull-right\">
+                        <label>
+                            <input type=\"checkbox\">
+                            Remember me </label>
+                    </div>
+                    <button type=\"submit\" class=\"btn btn btn-primary\">
+                        Log In
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
 ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 48
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -88,7 +148,7 @@ class __TwigTemplate_fc7b0a12b7af46036a1d8fc7eb0c9ed7c0dac3e1ebb139e68a12a2ed4ab
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  122 => 48,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -96,8 +156,50 @@ class __TwigTemplate_fc7b0a12b7af46036a1d8fc7eb0c9ed7c0dac3e1ebb139e68a12a2ed4ab
         return new Source("{% extends 'base.html.twig' %}
 
 {% block contenu %}
+    <div class=\"container align-items-center \">
+        <div class=\"row\">
 
-    rrrrrr
-{% endblock %}", "connexion/index.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\connexion\\index.html.twig");
+            <div class=\"main\">
+
+                <h3>Please Log In, or <a href=\"#\">Sign Up</a></h3>
+                <div class=\"row\">
+                    <div class=\"col-xs-6 col-sm-6 col-md-6\">
+                        <a href=\"#\" class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
+                    </div>
+                    <div class=\"col-xs-6 col-sm-6 col-md-6\">
+                        <a href=\"#\" class=\"btn btn-lg btn-info btn-block\">Google</a>
+                    </div>
+                </div>
+                <div class=\"login-or\">
+                    <hr class=\"hr-or\">
+                    <span class=\"span-or\">or</span>
+                </div>
+
+                <form role=\"form\">
+                    <div class=\"form-group\">
+                        <label for=\"inputUsernameEmail\">Username or email</label>
+                        <input type=\"text\" class=\"form-control\" id=\"inputUsernameEmail\">
+                    </div>
+                    <div class=\"form-group\">
+                        <a class=\"pull-right\" href=\"#\">Forgot password?</a>
+                        <label for=\"inputPassword\">Password</label>
+                        <input type=\"password\" class=\"form-control\" id=\"inputPassword\">
+                    </div>
+                    <div class=\"checkbox pull-right\">
+                        <label>
+                            <input type=\"checkbox\">
+                            Remember me </label>
+                    </div>
+                    <button type=\"submit\" class=\"btn btn btn-primary\">
+                        Log In
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+ {% block footer %}{% endblock %}", "connexion/index.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\connexion\\index.html.twig");
     }
 }

@@ -18,6 +18,8 @@ return [
     'admin' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin']], [], []],
     'command' => [[], ['_controller' => 'App\\Controller\\CommandController::index'], [], [['text', '/command']], [], []],
     'connexion' => [[], ['_controller' => 'App\\Controller\\ConnexionController::index'], [], [['text', '/connexion']], [], []],
+    'connect_facebook_start' => [[], ['_controller' => 'App\\Controller\\FacebookController::connectAction'], [], [['text', '/connect/facebook']], [], []],
+    'connect_facebook_check' => [[], ['_controller' => 'App\\Controller\\FacebookController::connectCheckAction'], [], [['text', '/connect/facebook/check']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], []],
     'resto' => [[], ['_controller' => 'App\\Controller\\RestoController::index'], [], [['text', '/resto']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],

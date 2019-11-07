@@ -23,6 +23,7 @@
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
+      <parameter key="KnpUOAuth2ClientBundle">KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -80,6 +81,10 @@
       <parameter key="WebpackEncoreBundle" type="collection">
         <parameter key="path">C:\Users\33627\Desktop\Nouveau dossier\bigchos\vendor\symfony\webpack-encore-bundle\src</parameter>
         <parameter key="namespace">Symfony\WebpackEncoreBundle</parameter>
+      </parameter>
+      <parameter key="KnpUOAuth2ClientBundle" type="collection">
+        <parameter key="path">C:\Users\33627\Desktop\Nouveau dossier\bigchos\vendor\knpuniversity\oauth2-client-bundle\src</parameter>
+        <parameter key="namespace">KnpU\OAuth2ClientBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -409,6 +414,13 @@
         <argument type="service" id=".service_locator.CDOTD6..App\Controller\ConnexionController"/>
       </call>
     </service>
+    <service id="App\Controller\FacebookController" class="App\Controller\FacebookController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.CDOTD6..App\Controller\FacebookController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -433,6 +445,11 @@
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Security\FacebookAuthenticator" class="App\Security\FacebookAuthenticator" autowire="true" autoconfigure="true">
+      <argument type="service" id="knpu.oauth2.registry"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="App\Repository\UserRepository"/>
     </service>
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -1565,6 +1582,8 @@
           <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\src/Resources/WebServerBundle/translations</argument>
           <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\vendor\symfony\webpack-encore-bundle\src/Resources/translations</argument>
           <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\src/Resources/WebpackEncoreBundle/translations</argument>
+          <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\vendor\knpuniversity\oauth2-client-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\src/Resources/KnpUOAuth2ClientBundle/translations</argument>
           <argument>C:\Users\33627\Desktop\Nouveau dossier\bigchos\src/Resources/translations</argument>
         </argument>
       </argument>
@@ -3249,8 +3268,9 @@
     </service>
     <service id="security.authentication.manager" class="Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager" public="false">
       <argument type="iterator">
-        <argument type="service" id="security.authentication.provider.guard.main"/>
-        <argument type="service" id="security.authentication.provider.anonymous.main"/>
+        <argument type="service" id="security.authentication.provider.guard.api"/>
+        <argument type="service" id="security.authentication.provider.guard.default"/>
+        <argument type="service" id="security.authentication.provider.anonymous.default"/>
       </argument>
       <argument>true</argument>
       <call method="setEventDispatcher">
@@ -3305,10 +3325,10 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
     <service id="security.firewall.map" class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
-      <argument type="service" id=".service_locator.ko2dQVn"/>
+      <argument type="service" id=".service_locator.P.pBS2W"/>
       <argument type="iterator">
-        <argument key="security.firewall.map.context.dev" type="service" id=".security.request_matcher.Iy.T22O"/>
-        <argument key="security.firewall.map.context.main">null</argument>
+        <argument key="security.firewall.map.context.api" type="service" id=".security.request_matcher.TlEZAKG"/>
+        <argument key="security.firewall.map.context.default">null</argument>
       </argument>
     </service>
     <service id="security.firewall.context" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false" abstract="true">
@@ -3336,7 +3356,7 @@
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <call method="registerListener">
-        <argument>main</argument>
+        <argument>default</argument>
         <argument>app_logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
@@ -3713,38 +3733,84 @@
       <argument>email</argument>
       <argument>null</argument>
     </service>
-    <service id="security.firewall.map.config.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
-      <argument>dev</argument>
+    <service id="security.firewall.map.config.api" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
+      <argument>api</argument>
       <argument>security.user_checker</argument>
-      <argument>.security.request_matcher.Iy.T22O</argument>
+      <argument>.security.request_matcher.TlEZAKG</argument>
+      <argument>true</argument>
       <argument>false</argument>
+      <argument>security.user.provider.concrete.app_user_provider</argument>
+      <argument>api</argument>
+      <argument>App\Security\SecurityFormAuthenticator</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument>guard</argument>
+      </argument>
+      <argument>null</argument>
+    </service>
+    <service id=".security.request_matcher.TlEZAKG" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin/</argument>
+    </service>
+    <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="iterator">
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+      </argument>
+      <argument>api</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
+      <argument type="service" id="security.authentication.trust_resolver"/>
+    </service>
+    <service id="security.authentication.provider.guard.api" class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
+      <argument type="iterator">
+        <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+      </argument>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+      <argument>api</argument>
+      <argument type="service" id="security.user_checker"/>
+    </service>
+    <service id="security.authentication.listener.guard.api" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
+      <tag name="security.remember_me_aware" id="api" provider="security.user.provider.concrete.app_user_provider"/>
+      <argument type="service" id="security.authentication.guard_handler"/>
+      <argument type="service" id="security.authentication.manager"/>
+      <argument>api</argument>
+      <argument type="iterator">
+        <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.exception_listener.api" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.authentication.trust_resolver"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>api</argument>
+      <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+      <argument>null</argument>
+      <argument>null</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument></argument>
-      <argument type="collection"/>
-      <argument>null</argument>
     </service>
-    <service id=".security.request_matcher.Iy.T22O" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
-    </service>
-    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
-      <argument type="iterator"/>
+    <service id="security.firewall.map.context.api" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
+      <argument type="iterator">
+        <argument type="service" id="security.channel_listener"/>
+        <argument type="service" id="security.context_listener.0"/>
+        <argument type="service" id="security.authentication.listener.guard.api"/>
+        <argument type="service" id="security.access_listener"/>
+      </argument>
+      <argument type="service" id="security.exception_listener.api"/>
       <argument>null</argument>
-      <argument>null</argument>
-      <argument type="service" id="security.firewall.map.config.dev"/>
+      <argument type="service" id="security.firewall.map.config.api"/>
     </service>
-    <service id="security.firewall.map.config.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
-      <argument>main</argument>
+    <service id="security.firewall.map.config.default" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
+      <argument>default</argument>
       <argument>security.user_checker</argument>
       <argument>null</argument>
       <argument>true</argument>
       <argument>false</argument>
       <argument>security.user.provider.concrete.app_user_provider</argument>
-      <argument>main</argument>
-      <argument>App\Security\SecurityFormAuthenticator</argument>
+      <argument>default</argument>
+      <argument>App\Security\FacebookAuthenticator</argument>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="collection">
@@ -3753,20 +3819,20 @@
       </argument>
       <argument>null</argument>
     </service>
-    <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+    <service id="security.context_listener.1" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="iterator">
         <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
-      <argument>main</argument>
+      <argument>default</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
       <argument type="service" id="security.authentication.trust_resolver"/>
     </service>
-    <service id="security.logout_listener.main" class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+    <service id="security.logout_listener.default" class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.http_utils"/>
-      <argument type="service" id="security.logout.success_handler.main"/>
+      <argument type="service" id="security.logout.success_handler.default"/>
       <argument type="collection">
         <argument key="csrf_parameter">_csrf_token</argument>
         <argument key="csrf_token_id">logout</argument>
@@ -3779,65 +3845,65 @@
         <argument type="service" id="security.logout.handler.session"/>
       </call>
     </service>
-    <service id="security.logout.success_handler.main" class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+    <service id="security.logout.success_handler.default" class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
       <argument type="service" id="security.http_utils"/>
       <argument>/</argument>
     </service>
-    <service id="security.authentication.provider.guard.main" class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
+    <service id="security.authentication.provider.guard.default" class="Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider" public="false">
       <argument type="iterator">
-        <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+        <argument type="service" id="App\Security\FacebookAuthenticator"/>
       </argument>
       <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
-      <argument>main</argument>
+      <argument>default</argument>
       <argument type="service" id="security.user_checker"/>
     </service>
-    <service id="security.authentication.listener.guard.main" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
-      <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.app_user_provider"/>
+    <service id="security.authentication.listener.guard.default" class="Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener" public="false">
+      <tag name="security.remember_me_aware" id="default" provider="security.user.provider.concrete.app_user_provider"/>
       <argument type="service" id="security.authentication.guard_handler"/>
       <argument type="service" id="security.authentication.manager"/>
-      <argument>main</argument>
+      <argument>default</argument>
       <argument type="iterator">
-        <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+        <argument type="service" id="App\Security\FacebookAuthenticator"/>
       </argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+    <service id="security.authentication.listener.anonymous.default" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument>%container.build_hash%</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
-    <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+    <service id="security.authentication.provider.anonymous.default" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
       <argument>%container.build_hash%</argument>
     </service>
-    <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+    <service id="security.exception_listener.default" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>main</argument>
-      <argument type="service" id="App\Security\SecurityFormAuthenticator"/>
+      <argument>default</argument>
+      <argument type="service" id="App\Security\FacebookAuthenticator"/>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
     </service>
-    <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
+    <service id="security.firewall.map.context.default" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext" public="false">
       <argument type="iterator">
         <argument type="service" id="security.channel_listener"/>
-        <argument type="service" id="security.context_listener.0"/>
-        <argument type="service" id="security.authentication.listener.guard.main"/>
-        <argument type="service" id="security.authentication.listener.anonymous.main"/>
+        <argument type="service" id="security.context_listener.1"/>
+        <argument type="service" id="security.authentication.listener.guard.default"/>
+        <argument type="service" id="security.authentication.listener.anonymous.default"/>
         <argument type="service" id="security.access_listener"/>
       </argument>
-      <argument type="service" id="security.exception_listener.main"/>
-      <argument type="service" id="security.logout_listener.main"/>
-      <argument type="service" id="security.firewall.map.config.main"/>
+      <argument type="service" id="security.exception_listener.default"/>
+      <argument type="service" id="security.logout_listener.default"/>
+      <argument type="service" id="security.firewall.map.config.default"/>
     </service>
-    <service id=".service_locator.ko2dQVn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.P.pBS2W" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
-        <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
+        <argument key="security.firewall.map.context.api" type="service" id="security.firewall.map.context.api"/>
+        <argument key="security.firewall.map.context.default" type="service" id="security.firewall.map.context.default"/>
       </argument>
     </service>
     <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
@@ -4659,6 +4725,32 @@
         <argument key="_default" type="service" id="webpack_encore.entrypoint_lookup[_default]"/>
       </argument>
     </service>
+    <service id="knpu.oauth2.provider_factory" class="KnpU\OAuth2ClientBundle\DependencyInjection\ProviderFactory" public="false">
+      <argument type="service" id="router.default"/>
+    </service>
+    <service id="knpu.oauth2.registry" class="KnpU\OAuth2ClientBundle\Client\ClientRegistry" public="true">
+      <argument type="service" id="service_container"/>
+      <argument type="collection">
+        <argument key="facebook">knpu.oauth2.client.facebook</argument>
+      </argument>
+    </service>
+    <service id="knpu.oauth2.user_provider" class="KnpU\OAuth2ClientBundle\Security\User\OAuthUserProvider" public="false"/>
+    <service id="knpu.oauth2.provider.facebook" class="League\OAuth2\Client\Provider\Facebook" public="false">
+      <argument>League\OAuth2\Client\Provider\Facebook</argument>
+      <argument type="collection">
+        <argument key="clientId">%env(OAUTH_FACEBOOK_ID)%</argument>
+        <argument key="clientSecret">%env(OAUTH_FACEBOOK_SECRET)%</argument>
+        <argument key="graphApiVersion">v3.2</argument>
+      </argument>
+      <argument>connect_facebook_check</argument>
+      <argument type="collection"/>
+      <argument type="collection"/>
+      <factory service="knpu.oauth2.provider_factory" method="createProvider"/>
+    </service>
+    <service id="knpu.oauth2.client.facebook" class="KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient" public="true">
+      <argument type="service" id="knpu.oauth2.provider.facebook"/>
+      <argument type="service" id="request_stack"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4668,6 +4760,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ConnexionController" class="App\Controller\ConnexionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ConnexionController" class="App\Controller\ConnexionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ConnexionController" class="App\Controller\ConnexionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FacebookController" class="App\Controller\FacebookController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FacebookController" class="App\Controller\FacebookController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FacebookController" class="App\Controller\FacebookController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4847,18 +4942,28 @@
         <argument key="panier" type="service" id="App\Service\Panier"/>
       </argument>
     </service>
+    <service id=".service_locator.no19fnv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="clientRegistry" type="service" id="knpu.oauth2.registry"/>
+      </argument>
+    </service>
     <service id=".service_locator.EbLunuf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ou1dIJr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.0PxgDZT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CommandController::index" type="service" id=".service_locator.8mkNlYJ"/>
+        <argument key="App\Controller\FacebookController::connectAction" type="service" id=".service_locator.no19fnv"/>
+        <argument key="App\Controller\FacebookController::connectCheckAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
         <argument key="App\Controller\CommandController:index" type="service" id=".service_locator.8mkNlYJ"/>
+        <argument key="App\Controller\FacebookController:connectAction" type="service" id=".service_locator.no19fnv"/>
+        <argument key="App\Controller\FacebookController:connectCheckAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
       </argument>
     </service>
@@ -5156,6 +5261,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.CDOTD6." method="withContext"/>
     </service>
+    <service id=".service_locator.CDOTD6..App\Controller\FacebookController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\FacebookController"/>
+      <argument>App\Controller\FacebookController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.CDOTD6." method="withContext"/>
+    </service>
     <service id=".service_locator.CDOTD6..App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -5267,12 +5378,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ou1dIJr"/>
+      <argument type="service" id=".service_locator.0PxgDZT"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ou1dIJr"/>
+      <argument type="service" id=".service_locator.0PxgDZT"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5635,8 +5746,10 @@
     <service id="Symfony\Component\Security\Guard\GuardAuthenticatorHandler" alias="security.authentication.guard_handler" public="false"/>
     <service id="security.firewall" alias="debug.security.firewall" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.app_user_provider"/>
-    <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
-    <service id="security.user_checker.main" alias="security.user_checker" public="false"/>
+    <service id="security.authentication.session_strategy.api" alias="security.authentication.session_strategy"/>
+    <service id="security.user_checker.api" alias="security.user_checker" public="false"/>
+    <service id="security.authentication.session_strategy.default" alias="security.authentication.session_strategy"/>
+    <service id="security.user_checker.default" alias="security.user_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="swiftmailer.mailer.default.transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="swiftmailer.mailer.default.spool" alias="swiftmailer.mailer.default.spool.memory"/>
@@ -5656,7 +5769,10 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ou1dIJr"/>
+    <service id="KnpU\OAuth2ClientBundle\Client\ClientRegistry" alias="knpu.oauth2.registry" public="false"/>
+    <service id="oauth2.registry" alias="knpu.oauth2.registry" public="true"/>
+    <service id="KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient" alias="knpu.oauth2.client.facebook" public="false"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.0PxgDZT"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
