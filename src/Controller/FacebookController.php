@@ -41,6 +41,6 @@ class FacebookController extends AbstractController
      */
     public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
-        return $this->redirectToRoute('your_homepage_route');
+        return $this->redirectToRoute('connfacebook');
     }
 }
