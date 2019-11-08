@@ -136,6 +136,13 @@ class __TwigTemplate_b55b3ba4d56e431db4c82e012e8663566a73613f0dcde4abc278c984669
         Sign in
     </button>
 </form>
+
+    <a href=\"";
+        // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connect_facebook_start");
+        echo "\">
+        Facebook
+    </a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -157,7 +164,7 @@ class __TwigTemplate_b55b3ba4d56e431db4c82e012e8663566a73613f0dcde4abc278c984669
 
     public function getDebugInfo()
     {
-        return array (  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  142 => 43,  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,6 +210,10 @@ class __TwigTemplate_b55b3ba4d56e431db4c82e012e8663566a73613f0dcde4abc278c984669
         Sign in
     </button>
 </form>
+
+    <a href=\"{{ path('connect_facebook_start') }}\">
+        Facebook
+    </a>
 {% endblock %}
 ", "security/login.html.twig", "C:\\Users\\elhayani\\Desktop\\bureau\\projets\\bigchos\\templates\\security\\login.html.twig");
     }

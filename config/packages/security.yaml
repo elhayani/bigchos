@@ -11,16 +11,14 @@ security:
                 class: App\Entity\User
                 property: email
     firewalls:
-        admin:
-            pattern: ^/admin/
+        # ...
+        main:
+            anonymous: true
+            # ...
             guard:
+                provider: app_user_provider
                 authenticators:
-                - App\Security\SecurityFormAuthenticator
-        default:
-            anonymous: ~
-            guard:
-                authenticators:
-                - App\Security\FacebookAuthenticator
+                    - App\Security\FacebookAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
