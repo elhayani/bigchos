@@ -105,7 +105,7 @@ class FacebookAuthenticator extends SocialAuthenticator
         // a User object
         $user->setFacebookId($facebookUser->getId());
         $this->userManager->persist($user);
-        $this->userManager->flush($);
+        $this->userManager->flush();
 
         return $userProvider->loadUserByUsername($user->getUsername());
     }
