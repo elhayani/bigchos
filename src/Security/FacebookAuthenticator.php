@@ -104,8 +104,8 @@ class FacebookAuthenticator extends SocialAuthenticator
         // 3) Maybe you just want to "register" them by creating
         // a User object
         $user->setFacebookId($facebookUser->getId());
-        $this->userManager->persist($user);
-        $this->userManager->flush();
+        $this->em->persist($user);
+        $this->em->flush();
 
         return $userProvider->loadUserByUsername($user->getUsername());
     }

@@ -48,6 +48,11 @@ class User implements UserInterface
      */
     private $enabled;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $username;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -158,6 +163,13 @@ class User implements UserInterface
     public function setEnabled(?bool $enabled): self
     {
         $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }
