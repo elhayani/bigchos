@@ -93,18 +93,19 @@ class FacebookAuthenticator extends SocialAuthenticator
 
             if (!$user) {
                 /** @var User $user */
-                $user = $this->userManager->createUser();
+                $user = new User();
                 $user->setEnabled(true);
                 $user->setEmail($email);
                 $user->setUsername("your chosen username");
-                $user->setPlainPassword("your chosen password");
+                $user->setPassword("your chosen password");
             }
         }
 
         // 3) Maybe you just want to "register" them by creating
         // a User object
         $user->setFacebookId($facebookUser->getId());
-        $this->userManager->updateUser($user);
+        $this->userManager->persist($user);
+        $this->userManager->flush($);
 
         return $userProvider->loadUserByUsername($user->getUsername());
     }
