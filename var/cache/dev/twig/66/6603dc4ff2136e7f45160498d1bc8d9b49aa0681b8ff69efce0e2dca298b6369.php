@@ -242,11 +242,11 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
                                     <a class=\"nav-link\" href=\"menu.html\">Menu</a>
                                 </li>
                                 <li class=\"nav-item\">
-                                    <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
+                                    <a  class=\"nav-link\" href=\"collapseOne\">Team</a>
                                 </li>
 
                                 <li class=\"nav-item dropdown\">
-                                    <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
+                                    <a class=\"nav-link\" href=\"login\"> Se connecter</a>
                                 </li>
                             </div>
                             <li class=\"nav-item\">
@@ -468,11 +468,11 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
                                     <a class=\"nav-link\" href=\"menu.html\">Menu</a>
                                 </li>
                                 <li class=\"nav-item\">
-                                    <a class=\"card-link\" data-toggle=\"collapse\" href=\"#collapseOne\">Team</a>
+                                    <a  class=\"nav-link\" href=\"collapseOne\">Team</a>
                                 </li>
 
                                 <li class=\"nav-item dropdown\">
-                                    <a class=\"nav-link\" href=\"#connexion\"> Se connecter</a>
+                                    <a class=\"nav-link\" href=\"login\"> Se connecter</a>
                                 </li>
                             </div>
                             <li class=\"nav-item\">

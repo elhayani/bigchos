@@ -463,6 +463,7 @@
       <argument type="service" id="security.csrf.token_manager"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
+    <service id="App\Service\Adresse" class="App\Service\Adresse" autowire="true" autoconfigure="true"/>
     <service id="App\Service\Panier" class="App\Service\Panier" autowire="true" autoconfigure="true"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -4874,10 +4875,10 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.8mkNlYJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.W4TB1tB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="panier" type="service" id="App\Service\Panier"/>
+        <argument key="adresse" type="service" id="App\Service\Adresse"/>
       </argument>
     </service>
     <service id=".service_locator.no19fnv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4892,14 +4893,14 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.0PxgDZT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.2iI0n87" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\CommandController::index" type="service" id=".service_locator.8mkNlYJ"/>
+        <argument key="App\Controller\CommandController::index" type="service" id=".service_locator.W4TB1tB"/>
         <argument key="App\Controller\FacebookController::connectAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\FacebookController::connectCheckAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
-        <argument key="App\Controller\CommandController:index" type="service" id=".service_locator.8mkNlYJ"/>
+        <argument key="App\Controller\CommandController:index" type="service" id=".service_locator.W4TB1tB"/>
         <argument key="App\Controller\FacebookController:connectAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\FacebookController:connectCheckAction" type="service" id=".service_locator.no19fnv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
@@ -5316,12 +5317,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.0PxgDZT"/>
+      <argument type="service" id=".service_locator.2iI0n87"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.0PxgDZT"/>
+      <argument type="service" id=".service_locator.2iI0n87"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5708,7 +5709,7 @@
     <service id="KnpU\OAuth2ClientBundle\Client\ClientRegistry" alias="knpu.oauth2.registry" public="false"/>
     <service id="oauth2.registry" alias="knpu.oauth2.registry" public="true"/>
     <service id="KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient" alias="knpu.oauth2.client.facebook" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.0PxgDZT"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2iI0n87"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

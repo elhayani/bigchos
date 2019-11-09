@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\Panier;
+use App\Service\Adresse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,12 +11,14 @@ class CommandController extends AbstractController
 {
     /**
      * @Route("/command", name="command")
-     * @param Panier $panier
+     * @param Adresse $adresse
      * @return Response
      */
-    public function index(Panier $panier)
-    {
-        $message = $panier->getHappyMessage();
-        return new Response('noconnect');
+    public function index(Adresse $adresse)
+    {//https://api-adresse.data.gouv.fr/search/?q=rue+gambeta
+        return $this->render('command/index.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
     }
 }
+

@@ -65,16 +65,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 4
-        echo "    <div id=\"accordion\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
-        <div class=\"card\">
-            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
-                <div class=\"card-body\">
-                    <b>TESTTTTTT</b><input>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class=\"hero\">
+        echo "    <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
                 <div class=\"col-6\">
@@ -692,15 +683,6 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         return new Source("{% extends 'base.html.twig' %}
 
 {% block contenu %}
-    <div id=\"accordion\" class=\"navbar navbar-expand-lg sticky-top bg-white\">
-        <div class=\"card\">
-            <div id=\"collapseOne\" class=\"collapse show\" data-parent=\"#accordion\">
-                <div class=\"card-body\">
-                    <b>TESTTTTTT</b><input>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class=\"hero\">
         <div class=\"container\">
             <div class=\"row align-items-start\">
