@@ -41,7 +41,7 @@ class ConnexionController extends AbstractController
      */
     public function connectFacebookCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
-        return $this->redirectToRoute('connfacebook');
+        return $this->redirectToRoute('home');
     }
 
     /**
@@ -75,6 +75,6 @@ class ConnexionController extends AbstractController
      */
     public function connectGoogleCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
-        return $this->redirectToRoute('conngoogle');
+        return $this->redirectToRoute('home');
     }
 }
