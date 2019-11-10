@@ -57,7 +57,7 @@ class ConnexionController extends AbstractController
         return $clientRegistry
             ->getClient('google')
             ->redirect([
-                'public_profile', 'email' // the scopes you want to access
+                'openid','userinfo.email', 'userinfo.profile'
             ])
             ;
     }
