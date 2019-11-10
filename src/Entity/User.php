@@ -148,7 +148,7 @@ class User implements UserInterface
         return $this->googleId;
     }
 
-    public function setGoogleId(?int $googleId): self
+    public function setGoogleId(?string $googleId): self
     {
         $this->googleId = $googleId;
 
