@@ -39,7 +39,7 @@ class User implements UserInterface
     private $facebookId;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $googleId;
 
@@ -143,7 +143,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getGoogleId(): ?int
+    public function getGoogleId(): ?string
     {
         return $this->googleId;
     }
