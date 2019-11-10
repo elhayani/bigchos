@@ -104,11 +104,13 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
                         <a href=\"";
         // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connect_facebook_start");
-        echo "\"
-                           class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
+        echo "\" class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
                     </div>
                     <div class=\"col-xs-6 col-sm-6 col-md-6\">
-                        <a href=\"#\" class=\"btn btn-lg btn-info btn-block\">Google</a>
+                        <a href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connect_google_start");
+        echo "\" class=\"btn btn-lg btn-info btn-block\">Google</a>
                     </div>
                 </div>
                 <div class=\"login-or\">
@@ -119,8 +121,8 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
                 <form role=\"form\">
                     <div class=\"form-group\">
                         <input type=\"email\" value=\"";
-        // line 36
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 36, $this->source); })()), "html", null, true);
+        // line 35
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 35, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\"
                                class=\"form-control\" required autofocus placeholder=\"email\">
                     </div>
@@ -130,7 +132,7 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
 
                         <input type=\"hidden\" name=\"_csrf_token\"
                                value=\"";
-        // line 44
+        // line 43
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
                         >
@@ -159,7 +161,7 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
 
     }
 
-    // line 63
+    // line 62
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -189,7 +191,7 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
 
     public function getDebugInfo()
     {
-        return array (  163 => 63,  134 => 44,  123 => 36,  106 => 22,  96 => 14,  88 => 11,  85 => 10,  83 => 9,  80 => 8,  74 => 6,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  165 => 62,  136 => 43,  125 => 35,  112 => 25,  106 => 22,  96 => 14,  88 => 11,  85 => 10,  83 => 9,  80 => 8,  74 => 6,  72 => 5,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -215,11 +217,10 @@ class __TwigTemplate_ba2512481718d6f69e95ef3c2e04ca0da664bceae076c2ea7a6cd1c4432
                 <h3>Please Log In, or <a href=\"#\">Sign Up</a></h3>
                 <div class=\"row\">
                     <div class=\"col-xs-6 col-sm-6 col-md-6\">
-                        <a href=\"{{ path('connect_facebook_start') }}\"
-                           class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
+                        <a href=\"{{ path('connect_facebook_start') }}\" class=\"btn btn-lg btn-primary btn-block\">Facebook</a>
                     </div>
                     <div class=\"col-xs-6 col-sm-6 col-md-6\">
-                        <a href=\"#\" class=\"btn btn-lg btn-info btn-block\">Google</a>
+                        <a href=\"{{ path('connect_google_start') }}\" class=\"btn btn-lg btn-info btn-block\">Google</a>
                     </div>
                 </div>
                 <div class=\"login-or\">

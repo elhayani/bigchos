@@ -17,6 +17,7 @@ security:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
                     - App\Security\FacebookAuthenticator
+                    - App\Security\GoogleAuthenticator
                 entry_point: App\Security\LoginFormAuthenticator
                 # access_denied_handler: App\Security\AccessDeniedHandler
             logout:

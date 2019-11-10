@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d576bb37d66bcf470a4cb36d2d12e01",
+    "content-hash": "34162857efa14cffb30f79cfbf3f7557",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1742,6 +1742,57 @@
                 "oauth2"
             ],
             "time": "2017-07-22T01:25:00+00:00"
+        },
+        {
+            "name": "league/oauth2-google",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-google.git",
+                "reference": "3290273029f7cc2a468aae68bad184479a23b9d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-google/zipball/3290273029f7cc2a468aae68bad184479a23b9d2",
+                "reference": "3290273029f7cc2a468aae68bad184479a23b9d2",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": "^2.0"
+            },
+            "require-dev": {
+                "eloquent/phony-phpunit": "^2.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^6.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "http://shadowhand.me"
+                }
+            ],
+            "description": "Google OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "google",
+                "oauth",
+                "oauth2"
+            ],
+            "time": "2018-12-28T16:18:33+00:00"
         },
         {
             "name": "monolog/monolog",

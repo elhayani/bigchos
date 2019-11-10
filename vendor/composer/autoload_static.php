@@ -476,6 +476,7 @@ class ComposerStaticInit17a806d57e30978edfa4444f7d5480f5
         array (
             0 => __DIR__ . '/..' . '/league/oauth2-client/src',
             1 => __DIR__ . '/..' . '/league/oauth2-facebook/src',
+            2 => __DIR__ . '/..' . '/league/oauth2-google/src',
         ),
         'KnpU\\OAuth2ClientBundle\\' => 
         array (
