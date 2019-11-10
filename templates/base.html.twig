@@ -188,7 +188,7 @@
             request.done(function (msg) {
                 switch (msg) {
                     case 'noconnect' :
-                        $(location).attr('href', "{{ path('connexion') }}");
+                        $(location).attr('href', "{{ path('app_login') }}");
                         break;
                 }
             });

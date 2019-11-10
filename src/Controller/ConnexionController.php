@@ -39,55 +39,42 @@ class ConnexionController extends AbstractController
      * @Route("/connect/facebook/check", name="connect_facebook_check")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
+    public function connectFacebookCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
         return $this->redirectToRoute('connfacebook');
     }
 
-
     /**
      * Link to this controller to start the "connect" process
-     *
-     * @Route("/connect/google", name="connect_google")
      * @param ClientRegistry $clientRegistry
+     *
+     * @Route("/connect/google", name="connect_google_start")
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function connectGoogleAction(ClientRegistry $clientRegistry)
     {
         return $clientRegistry
             ->getClient('google')
-            ->redirect();
+            ->redirect([
+                'public_profile', 'email' // the scopes you want to access
+            ])
+            ;
     }
 
     /**
-     * social redirects to back here afterwards
+     * After going to Facebook, you're redirected back here
+     * because this is the "redirect_route" you configured
+     * in config/packages/knpu_oauth2_client.yaml
      *
-     * @Route("/connect/facebook/check", name="connect_facebook_check")
      * @param Request $request
-     * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
+     * @param ClientRegistry $clientRegistry
+     *
+     * @Route("/connect/google/check", name="connect_google_check")
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function connectFacebookCheckAction(Request $request)
+    public function connectGoogleCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
-        if (!$this->getUser()) {
-            return new JsonResponse(array('status' => false, 'message' => "User not found!"));
-        } else {
-            return $this->redirectToRoute('default');
-        }
-
-        /**
-         * social redirects to back here afterwards
-         *
-         * @Route("/connect/google/check", name="connect_google_check")
-         * @param Request $request
-         * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
-         */
-        public function connectGoogleCheckAction(Request $request)
-    {
-        if (!$this->getUser()) {
-            return new JsonResponse(array('status' => false, 'message' => "User not found!"));
-        } else {
-            return $this->redirectToRoute('default');
-        }
-
+        return $this->redirectToRoute('conngoogle');
     }
 }

@@ -156,7 +156,7 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
                     case 'noconnect' :
                         \$(location).attr('href', \"";
         // line 191
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\");
                         break;
                 }
@@ -589,7 +589,7 @@ class __TwigTemplate_4c8dce999820db07e45cbbbba88c3617bff3d44f6ea4cb01260011ae8f2
             request.done(function (msg) {
                 switch (msg) {
                     case 'noconnect' :
-                        \$(location).attr('href', \"{{ path('connexion') }}\");
+                        \$(location).attr('href', \"{{ path('app_login') }}\");
                         break;
                 }
             });
