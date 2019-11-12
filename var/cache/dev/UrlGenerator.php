@@ -22,6 +22,8 @@ return [
     'connect_facebook_start' => [[], ['_controller' => 'App\\Controller\\FacebookController::connectAction'], [], [['text', '/connect/facebook']], [], []],
     'connect_facebook_check' => [[], ['_controller' => 'App\\Controller\\FacebookController::connectCheckAction'], [], [['text', '/connect/facebook/check']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], []],
+    'paiement' => [[], ['_controller' => 'App\\Controller\\PaiementController::index'], [], [['text', '/paiement']], [], []],
+    'check' => [[], ['_controller' => 'App\\Controller\\PaiementController::check'], [], [['text', '/check']], [], []],
     'resto' => [[], ['_controller' => 'App\\Controller\\RestoController::index'], [], [['text', '/resto']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], ['https']],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
