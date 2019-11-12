@@ -66,29 +66,29 @@ class __TwigTemplate_a7fc7cc43ad966ade976ca8b268347e1b82a885b42122a06de3fa0f3fc5
 
         // line 4
         echo "    <div id=\"custom-templates\">
-        <input class=\"typeahead\" type=\"text\" placeholder=\"Oscar winners for Best Picture\" id=\"adresse\">
+        <input class=\"typeahead\" type=\"text\" placeholder=\"Adresse de livraison\" id=\"adresse\">
     </div>
-
+    <div id=\"adresses\"></div>
 
 
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js\"></script>
     <script>
 
-        \$(\"#adresse\").keypress(function(){
-            var adresse = \$('#adresse').val()
+        \$(\"#adresse\").keypress(function () {
+            var adresse = \$('#adresse').val();
             \$.ajax({
-                url : 'https://api-adresse.data.gouv.fr/search/',
-                type : 'GET',
-                data : 'q='+adresse,
-                dataType : 'html', // On désire recevoir du HTML
-                success : function(obj, statut){ // code_html contient le HTML renvoyé
+                url: 'https://api-adresse.data.gouv.fr/search/',
+                type: 'GET',
+                data: 'q=' + adresse,
+                dataType: 'html', // On désire recevoir du HTML
+                success: function (obj, statut) { // code_html contient le HTML renvoyé
                     var obj = jQuery.parseJSON(obj);
                     features = obj.features;
-
+                    var html = '';
                     for (var i = 0; i < features.length; i++) {
-                        var porp = features[i].properties;
-alert(porp.label);
+                        html = html + '<div class=\"form-check\"><label class=\"form-radio-label\"><input type=\"radio\" class=\"form-check-input\" name=\"optradio\">' + features[i].properties.label + '</label></div>';
                     }
+                    \$(\"#adresses\").html(html);
                 }
             });
 
@@ -125,29 +125,29 @@ alert(porp.label);
 
 {% block contenu %}
     <div id=\"custom-templates\">
-        <input class=\"typeahead\" type=\"text\" placeholder=\"Oscar winners for Best Picture\" id=\"adresse\">
+        <input class=\"typeahead\" type=\"text\" placeholder=\"Adresse de livraison\" id=\"adresse\">
     </div>
-
+    <div id=\"adresses\"></div>
 
 
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js\"></script>
     <script>
 
-        \$(\"#adresse\").keypress(function(){
-            var adresse = \$('#adresse').val()
+        \$(\"#adresse\").keypress(function () {
+            var adresse = \$('#adresse').val();
             \$.ajax({
-                url : 'https://api-adresse.data.gouv.fr/search/',
-                type : 'GET',
-                data : 'q='+adresse,
-                dataType : 'html', // On désire recevoir du HTML
-                success : function(obj, statut){ // code_html contient le HTML renvoyé
+                url: 'https://api-adresse.data.gouv.fr/search/',
+                type: 'GET',
+                data: 'q=' + adresse,
+                dataType: 'html', // On désire recevoir du HTML
+                success: function (obj, statut) { // code_html contient le HTML renvoyé
                     var obj = jQuery.parseJSON(obj);
                     features = obj.features;
-
+                    var html = '';
                     for (var i = 0; i < features.length; i++) {
-                        var porp = features[i].properties;
-alert(porp.label);
+                        html = html + '<div class=\"form-check\"><label class=\"form-radio-label\"><input type=\"radio\" class=\"form-check-input\" name=\"optradio\">' + features[i].properties.label + '</label></div>';
                     }
+                    \$(\"#adresses\").html(html);
                 }
             });
 

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7604b39d-757d-4bce-a8f7-9ae82abe87a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191110172531.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/command/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/command/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/p5gf+X3gmN/V/F/PqWsGp4UeZKHkxOwJvjQ" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/p5gf+X3gmN/V/F/PqWsGp4UeZKHkxOwJvjQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/08/08a46780147e7dcf97b5937c750de61b84ba3eb19406360c3a50d330cbec9722.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/08/08a46780147e7dcf97b5937c750de61b84ba3eb19406360c3a50d330cbec9722.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +185,7 @@
       <workItem from="1572980096192" duration="13266000" />
       <workItem from="1573150830491" duration="9929000" />
       <workItem from="1573314505998" duration="24985000" />
+      <workItem from="1573500587723" duration="5123000" />
     </task>
     <servers />
   </component>
