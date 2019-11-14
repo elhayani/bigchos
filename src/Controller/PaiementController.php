@@ -21,22 +21,22 @@ class PaiementController extends AbstractController
      */
     public function index()
     {
-        // Set your secret key: remember to change this to your live secret key in production
-// See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey('sk_test_84dtkv2GAuJi2z6RrWQaH8tX00DVe2T4WR');
 
-        $intent = \Stripe\PaymentIntent::create([
-            'amount' => 1099,
-            'currency' => 'eur',
-        ]);
-        return $this->render('paiement/index.html.twig',['client_secret'=>$intent['client_secret']]);
+        return $this->render('paiement/index.html.twig');
     }
 
     /**
      * @Route("/check", name="check")
      */
     public function check(Request $request)
-    {
-        return $this->render('paiement/check.html.twig', ['clientsecret' => $request->get('client_secret')]);
+    {        // Set your secret key: remember to change this to your live secret key in production
+                // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey('sk_test_84dtkv2GAuJi2z6RrWQaH8tX00DVe2T4WR');
+
+        $intent = \Stripe\PaymentIntent::create([
+            'amount' => 1099,
+            'currency' => 'eur',
+        ]);
+        return $this->render('paiement/check.html.twig', ['client_secret' => $request->get('client_secret')]);
     }
 }
