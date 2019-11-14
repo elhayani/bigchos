@@ -1,6 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block contenu %}
+
+    <style>
+        .flex-container {
+
+            display: flex;
+            flex-wrap: nowrap;
+
+        }
+
+        .flex-container > div {
+            background-image: url("img/panier.jpg");
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+
+        }
+    </style>
+    <div class="flex-container">
+        <div>9</div>
+    </div>
     <div class="hero">
         <div class="container">
             <div class="row align-items-start">
@@ -159,7 +179,8 @@
                                 nesciunt
                                 provident libero qui eum, corporis esse quos excepturi soluta?</p>
                             <h3 class="special-dishes-price">$15.00</h3>
-                            <a onclick="commander()" class="btn-primary mt-3">Commander</a>
+                            <a  class="btn btn-primary" data-toggle="modal" data-target="#commande"> Commander</a>
+
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
@@ -589,5 +610,15 @@
 
         </div>
     </section>
+    <!-- Modal -->
+    <div class="modal fade" id="commande">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {{ render(controller('App\\Controller\\CommandController::index', {}, { 'id': 'idtest', 'active': true } ))
+
+                }}
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- End of Reservation Section -->
 {% endblock contenu %}
