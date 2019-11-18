@@ -65,7 +65,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 4
-        echo "    <div class=\"hero\">
+        echo "    <div class=\"hero bg-grey \">
         <div class=\"container\">
             <div class=\"row align-items-start\">
                 <div class=\"col-6\">
@@ -142,7 +142,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
             </div>
         </div>
     </div>        <!-- Welcome Section -->
-    <section id=\"gtco-welcome\" class=\"bg-white section-padding\">
+    <section id=\"gtco-welcome\" class=\" section-padding\">
         <div class=\"container\">
             <div class=\"section-content\">
                 <div class=\"row\">
@@ -223,7 +223,8 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                 nesciunt
                                 provident libero qui eum, corporis esse quos excepturi soluta?</p>
                             <h3 class=\"special-dishes-price\">\$15.00</h3>
-                            <a onclick=\"commander()\" class=\"btn-primary mt-3\">Commander</a>
+                            <a  class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#commande\"> Commander</a>
+
                         </div>
                     </div>
                     <div class=\"col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0\">
@@ -653,7 +654,76 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
 
         </div>
     </section>
+    <!-- Modal -->
+    <div class=\"modal fade\" id=\"commande\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
+                ";
+        // line 597
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\CommandController::index", [], ["id" => "idtest", "active" => true]));
+        // line 599
+        echo "
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- End of Reservation Section -->
+    <div class=\"container demo\">
+
+
+        <div class=\"text-center\">
+            <button type=\"button\" class=\"btn btn-demo\" data-toggle=\"modal\" data-target=\"#myModal\">
+                Left Sidebar Modal
+            </button>
+
+            <button type=\"button\" class=\"btn btn-demo\" data-toggle=\"modal\" data-target=\"#myModal2\">
+                Right Sidebar Modal
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class=\"modal left fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\">
+
+                    <div class=\"modal-header\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                        <h4 class=\"modal-title\" id=\"myModalLabel\">Left Sidebar</h4>
+                    </div>
+
+                    <div class=\"modal-body\">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </p>
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+        <!-- Modal -->
+        <div class=\"modal right fade\" id=\"myModal2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel2\">
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\">
+
+                    <div class=\"modal-header\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                        <h4 class=\"modal-title\" id=\"myModalLabel2\">Right Sidebar</h4>
+                    </div>
+
+                    <div class=\"modal-body\">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </p>
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+    </div><!-- container -->
+
+    <footer class=\"demo-footer\">
+        <a href=\"http://www.bootpen.com\" target=\"_blank\">Get more code snippets</a>
+    </footer>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -675,7 +745,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  665 => 599,  663 => 597,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -683,7 +753,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
         return new Source("{% extends 'base.html.twig' %}
 
 {% block contenu %}
-    <div class=\"hero\">
+    <div class=\"hero bg-grey \">
         <div class=\"container\">
             <div class=\"row align-items-start\">
                 <div class=\"col-6\">
@@ -760,7 +830,7 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
             </div>
         </div>
     </div>        <!-- Welcome Section -->
-    <section id=\"gtco-welcome\" class=\"bg-white section-padding\">
+    <section id=\"gtco-welcome\" class=\" section-padding\">
         <div class=\"container\">
             <div class=\"section-content\">
                 <div class=\"row\">
@@ -841,7 +911,8 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
                                 nesciunt
                                 provident libero qui eum, corporis esse quos excepturi soluta?</p>
                             <h3 class=\"special-dishes-price\">\$15.00</h3>
-                            <a onclick=\"commander()\" class=\"btn-primary mt-3\">Commander</a>
+                            <a  class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#commande\"> Commander</a>
+
                         </div>
                     </div>
                     <div class=\"col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0\">
@@ -1271,7 +1342,74 @@ class __TwigTemplate_73bc667494c2996b43bc374495df81dfc8f841d30fc885c82a27cdbbf37
 
         </div>
     </section>
+    <!-- Modal -->
+    <div class=\"modal fade\" id=\"commande\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
+                {{ render(controller('App\\\\Controller\\\\CommandController::index', {}, { 'id': 'idtest', 'active': true } ))
+
+                }}
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- End of Reservation Section -->
+    <div class=\"container demo\">
+
+
+        <div class=\"text-center\">
+            <button type=\"button\" class=\"btn btn-demo\" data-toggle=\"modal\" data-target=\"#myModal\">
+                Left Sidebar Modal
+            </button>
+
+            <button type=\"button\" class=\"btn btn-demo\" data-toggle=\"modal\" data-target=\"#myModal2\">
+                Right Sidebar Modal
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class=\"modal left fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\">
+
+                    <div class=\"modal-header\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                        <h4 class=\"modal-title\" id=\"myModalLabel\">Left Sidebar</h4>
+                    </div>
+
+                    <div class=\"modal-body\">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </p>
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+        <!-- Modal -->
+        <div class=\"modal right fade\" id=\"myModal2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel2\">
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\">
+
+                    <div class=\"modal-header\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                        <h4 class=\"modal-title\" id=\"myModalLabel2\">Right Sidebar</h4>
+                    </div>
+
+                    <div class=\"modal-body\">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </p>
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+
+    </div><!-- container -->
+
+    <footer class=\"demo-footer\">
+        <a href=\"http://www.bootpen.com\" target=\"_blank\">Get more code snippets</a>
+    </footer>
 {% endblock contenu %}", "home/index.html.twig", "C:\\Users\\33627\\Desktop\\Nouveau dossier\\bigchos\\templates\\home\\index.html.twig");
     }
 }
